@@ -10,13 +10,27 @@ public class WordChecker {
     public boolean isWordChain() {
         String prevWord = "";
 for (String word: wordList){
-    if (word.contains(prevWord));
-    prevWord = word;
+    if (word.contains(prevWord)) {
+        prevWord = word;
+    }
+    else {
+        return false;
+    }
+
 }
 return true;
     }
 
     public ArrayList<String> createList(String target) {
-        return null;
+        ArrayList<String> newList = new ArrayList<>();
+        for (String word: wordList){
+            if (word.startsWith(target)){
+                newList.add(word.substring(target.length()));
+
+            }
+
+        }
+
+        return newList;
     }
 }
